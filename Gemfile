@@ -25,6 +25,14 @@ gem 'pg'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+# Pagination
+gem 'kaminari'
+
+gem 'active_model_serializers', :git => 'git://github.com/rails-api/active_model_serializers.git'
+
 group :development, :test do
+  gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
