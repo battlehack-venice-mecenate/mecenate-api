@@ -11,7 +11,7 @@ class WelcomeController < ActionController::Base
         {:name => 'Niccolo Paravanti', :twitter => '@niqdev'}
       ],
       :technologies => ['Android', 'Ruby', 'Ruby on Rails', 'JavaScript', 'AngularJS'],
-      :partner_technlogies => %w{Braintree Sendgrid Heroku}
+      :partner_technlogies => %w{Braintree Heroku}
     }
 
     respond_to do |format|
