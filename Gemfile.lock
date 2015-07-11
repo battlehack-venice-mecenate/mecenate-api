@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 0201f2dd2a3f0ed5daf54eabc33d7c6d7c224ed3
+  specs:
+    active_model_serializers (0.10.0.rc1)
+      activemodel (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,12 +45,23 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.1)
     builder (3.2.2)
+    byebug (5.0.0)
+      columnize (= 0.9.0)
+    columnize (0.9.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     json (1.8.3)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -102,6 +120,8 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
+    shoulda-matchers (2.6.0)
+      activesupport (>= 3.0.0)
     spring (1.3.6)
     sprockets (3.2.0)
       rack (~> 1.0)
@@ -118,8 +138,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
+  byebug
+  factory_girl_rails
+  kaminari
   pg
   rails (= 4.2.3)
   rails-api
   rspec-rails (~> 3.0)
+  shoulda-matchers
   spring
