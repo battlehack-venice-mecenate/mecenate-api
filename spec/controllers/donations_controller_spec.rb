@@ -41,4 +41,28 @@ describe DonationsController do
       end
     end
   end
+
+  describe '#index' do
+    let(:poi) { create(:poi) }
+    before do
+      30.times { create(:donation, :poi => poi) }
+    end
+
+    it 'is OK' do
+      get :index, :id => poi.id
+      expect(response.status).to eq(200)
+    end
+
+    describe 'pagination' do
+      it 'responds with the first page' do
+        get :index, :id => poi.id
+        expect(JSON.load(response.body)['donations'].size).to eq(25)
+      end
+
+      it 'includes meta' do
+        get :index, :id => poi.id
+        expect(JSON.load(response.body)['meta']).not_to be(nil)
+      end
+    end
+  end
 end

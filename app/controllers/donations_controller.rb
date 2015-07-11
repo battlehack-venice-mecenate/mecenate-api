@@ -6,6 +6,11 @@ class DonationsController < ApplicationController
     render :json => {:client_token => Braintree::ClientToken.generate}
   end
 
+  def index
+    donations = Donation.where(:poi_id => params[:id]).order(:id).page(params[:page])
+    render :json => donations, :meta => pagination_meta(donations)
+  end
+
   def create
     donation = poi.donations.build(donation_params)
     response = Braintree::Transaction.sale(:amount => '%.02f' % (donation.amount_in_cents.to_i / 100.0),

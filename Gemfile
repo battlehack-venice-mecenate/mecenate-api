@@ -36,6 +36,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-mocks'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end

@@ -152,6 +152,7 @@ DEPENDENCIES
   pg
   rails (= 4.2.3)
   rails-api
+  rspec-mocks
   rspec-rails (~> 3.0)
   shoulda-matchers
   spring

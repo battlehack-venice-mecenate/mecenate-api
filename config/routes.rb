@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :pois, :only => [:index, :show] do
     member do
       post 'donations' => 'donations#create'
+      get 'donations' => 'donations#index'
     end
   end
 end
