@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
 
   match '*path', :to => 'cors#options', :via => [:options]
+  root :to => 'welcome#index'
 end

@@ -1,0 +1,7 @@
+<html>
+  <body>
+    <script>
+      document.body.appendChild(document.createElement('pre')).innerHTML = JSON.stringify(<%= @data.to_json.html_safe %>, null, 2);;
+    </script>
+  </body>
+</html>
