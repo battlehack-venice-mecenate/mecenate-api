@@ -1,3 +1,3 @@
 class PoiSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :image_url, :lat, :lon
+  attributes :id, :name, :description, :image_url, :lat, :lon, :total_donations_in_cents
 end
