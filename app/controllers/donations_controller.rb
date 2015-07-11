@@ -7,6 +7,11 @@ class DonationsController < ApplicationController
   end
 
   def index
+    donations = Donation.order(:id => :desc).page(params[:page])
+    render :json => donations, :meta => pagination_meta(donations)
+  end
+
+  def poi_index
     donations = Donation.where(:poi_id => params[:id]).order(:id).page(params[:page])
     render :json => donations, :meta => pagination_meta(donations)
   end
