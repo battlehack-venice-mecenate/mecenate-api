@@ -44,11 +44,16 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.1)
+    braintree (2.45.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
     columnize (0.9.0)
     diff-lcs (1.2.5)
+    dotenv (0.10.0)
+    dotenv-rails (0.10.0)
+      dotenv (= 0.10.0)
     erubis (2.7.0)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -139,7 +144,9 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers!
+  braintree
   byebug
+  dotenv-rails
   factory_girl_rails
   kaminari
   pg
