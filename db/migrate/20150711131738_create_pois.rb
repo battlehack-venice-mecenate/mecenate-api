@@ -4,8 +4,8 @@ class CreatePois < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :image_url
-      t.deciaml :lat, {:precision=>10, :scale=>6}
-      t.deciaml :lon, {:precision=>10, :scale=>6}
+      t.decimal :lat, {:precision=>10, :scale=>6}
+      t.decimal :lon, {:precision=>10, :scale=>6}
 
       t.timestamps
     end
