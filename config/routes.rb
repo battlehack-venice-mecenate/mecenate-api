@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       get 'donations' => 'donations#index'
     end
   end
+
+  match '*path', :to => 'cors#options', :via => [:options]
 end
