@@ -14,7 +14,7 @@ class DonationsController < ApplicationController
   def create
     donation = poi.donations.build(donation_params)
     response = Braintree::Transaction.sale(:amount => '%.02f' % (donation.amount_in_cents.to_i / 100.0),
-      :payment_method_nonce => nonce_from_client)
+      :payment_method_nonce => nonce_from_client, :custom_fields => {:poi_id => poi.id, :poi_name => poi.name})
 
     donation.success = response.success?
     if donation.success?
