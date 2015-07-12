@@ -14,8 +14,7 @@ describe DonationsController do
       :id => poi.id,
       :payment_method_nonce => Braintree::Test::Nonce::Transactable,
       :amount_in_cents => (foo = Random.rand(100)) == 0 ? Random.rand(100) : foo,
-      :anonymous => false,
-      :email => 'foo@bar.com'
+      :anonymous => false
     } }
 
     it 'is OK' do

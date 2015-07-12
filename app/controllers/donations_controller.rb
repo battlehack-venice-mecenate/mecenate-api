@@ -25,6 +25,18 @@ class DonationsController < ApplicationController
     if donation.success?
       donation.braintree_response = response
       if donation.save
+        if donation.email.present?
+          client = SendGrid::Client.new(:api_user => ENV['SENDGRID_USERNAME'], :api_key => ENV['SENDGRID_PASSWORD'])
+          mail = SendGrid::Mail.new do |m|
+            m.to = donation.email
+            m.from = 'support@mecenate-api'
+            m.from_name = 'Mecenate'
+            m.subject = 'Thank you!'
+            m.text = "Thank you for helping Italy mantains #{poi.name}! You algo get a chance to win a ticket for an exclusive event around the monument!"
+          end
+          client.send(mail)
+        end
+
         render :json => donation
         return
       end
