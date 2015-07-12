@@ -36,10 +36,10 @@ class PoisController < ApplicationController
     params.require(:lat)
     params.require(:lon)
     params.require(:image_url)
-    params.permit(:name, :description, :lat, :lon, :image_url)
+    params.permit(:name, :description, :lat, :lon, :image_url, :target_in_cents)
   end
 
   def poi_update_params
-    params.permit(:name, :description, :lat, :lon, :image_url)
+    params.permit(:name, :description, :lat, :lon, :image_url, :target_in_cents)
   end
 end
