@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/client_token' => 'donations#braintree_client_token'
-  resources :pois, :only => [:index, :show] do
+  resources :pois, :only => [:index, :show, :create, :update] do
     member do
       post 'donations' => 'donations#create'
       get 'donations' => 'donations#poi_index'

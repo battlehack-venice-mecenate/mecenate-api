@@ -1,5 +1,5 @@
 class Donation < ActiveRecord::Base
-  paginates_per 25
+  paginates_per 10
   belongs_to :poi
   validates :amount_in_cents, :presence => true
   serialize :braintree_response, JSON

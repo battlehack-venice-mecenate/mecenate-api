@@ -38,4 +38,19 @@ describe PoisController do
       end
     end
   end
+
+  describe '#create' do
+    let(:valid_params) { {
+      :name => 'foo',
+      :lat => 1.333,
+      :lon => 4.555,
+      :image_url => 'http://example.com/image.png'
+    } }
+
+
+    it 'is OK' do
+      post :create, valid_params
+      expect(response.status).to eq(200)
+    end
+  end
 end
