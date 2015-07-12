@@ -44,7 +44,7 @@ class DonationsController < ApplicationController
   def donation_params
     params.require(:payment_method_nonce)
     params.require(:amount_in_cents)
-    params.permit(:amount_in_cents, :anonymous)
+    params.permit(:amount_in_cents, :anonymous, :email)
   end
 
   def nonce_from_client
