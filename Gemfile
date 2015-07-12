@@ -32,6 +32,9 @@ gem 'active_model_serializers', :git => 'git://github.com/rails-api/active_model
 
 gem "braintree"
 
+gem 'sendgrid-ruby'
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'byebug'
